@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import APIKEY from './config'
+import APIKEY from './googleAPI_config'
 import './App.css';
 
 class App extends React.Component{
