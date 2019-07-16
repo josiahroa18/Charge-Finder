@@ -1,0 +1,56 @@
+/* Web Styles */
+body{
+  margin: 0px;
+  padding: 0px;
+}
+
+img{
+  width: 120px;
+  position: absolute;
+  padding-top: 10px;
+  padding-left: 20px;
+  z-index: 1;
+}
+
+h1, h2, h3, h4, h5, p, a{
+  font-family: Helvetica, sans-serif;
+}
+
+.header-container{
+  height: 40px;
+  background-color: #cc0000;
+  display: flex;
+}
+
+.nav-bar{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.nav-bar a{
+  text-decoration: none;
+  color: #cccccc;
+  padding-right: 20px;
+  font-size: 10px;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 450px){
+  img{
+    width: 80px;
+    position: absolute;
+    padding: 10px;
+  }
+  .header-container{
+    height: 30px;
+  }
+  .nav-bar{
+    top: 3px;
+    right: 10px;
+  }
+  .nav-bar a{
+    padding-right: 10px;
+    font-size: 10px;
+  }
+}

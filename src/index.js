@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import APIKEY from './googleAPI_config'
-import './App.css';
+import APIKEY from './googleAPI_config';
+import Header from './components/Header';
+import Map from './components/Map';
+import './Header.css';
 
-class App extends React.Component{
+class AppIndex extends React.Component{
     render(){
         return(
             <div className="App">
-                <h1>Hello</h1>
-                {APIKEY}            
-                </div>
+                  <Header />
+                  <Map apiKey={APIKEY}/>
+            </div>
         );
     }
 }
 
-ReactDOM.render(<App />,document.getElementById('root'));
+ReactDOM.render(<AppIndex />,document.getElementById('root'));
