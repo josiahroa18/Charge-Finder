@@ -1,26 +1,36 @@
 import React, { Component } from 'react';
+import Footer from './Footer';
 import GoogleMapReact from 'google-map-react';
 
 export class Map extends Component {
-    static defaultProps = {
-        center: {
-            lat: 59.95,
-            lng: 30.33
-        },
-        zoom: 1
-    };
+    constructor(props){
+        super(props);
+        this.state = {
+            center: {
+                lat: 40,
+                lng: -95
+            },
+            zoom: 4
+        }
+    }
 
-    render() {
+    newLocation = (coordinates) =>{
+        this.setState({
+            center: coordinates,
+            zoom: 8
+        })
+    }
+
+    render(props) {
         return (
             <div style={{ height: '80vh', width: '100%', zIndex: '2' }}>
-                {console.log(this.props.apiKey)}
                 <GoogleMapReact 
                     bootstrapURLKeys={{key: this.props.apiKey}}
-                    defaultCenter={this.props.center}
-                    defaultZoom={this.props.zoom}
+                    center={this.state.center}
+                    zoom={this.state.zoom}
                 >
-
                 </GoogleMapReact>
+                <Footer apiKey={this.props.apiKey} newLocation={this.newLocation}/>
             </div>
         )
     }

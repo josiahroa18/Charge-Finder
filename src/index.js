@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import APIKEY from './googleAPI_config';
 import Header from './components/Header';
 import Map from './components/Map';
-import './Header.css';
 
 class AppIndex extends React.Component{
     render(){

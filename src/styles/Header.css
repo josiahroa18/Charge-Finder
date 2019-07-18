@@ -35,6 +35,10 @@ h1, h2, h3, h4, h5, p, a{
   font-size: 10px;
 }
 
+.nav-bar a:hover{
+  color: #ffffff;
+}
+
 /* Mobile Styles */
 @media only screen and (max-width: 450px){
   img{
