@@ -6,7 +6,21 @@ export class Footer extends Component {
         super(props);
         this.state = {
             zipCode: "",
-            range: ""
+            range: "twentyFiveMile",
+        }
+    }
+
+    getZoom = (range) =>{
+        const scaleRange = {
+            twentyFiveMile: 11,
+            fitfyMile: 10,
+            seventyFiveMile: 9,
+            oneHundredMile: 8
+        }
+        for(let i=0;i<4;i++){
+            if(range === Object.keys(scaleRange)[i]){
+                return Object.values(scaleRange)[i];
+            }
         }
     }
 
@@ -23,6 +37,7 @@ export class Footer extends Component {
             coordinates.lat = resJSON.results[0].geometry.location.lat;
             coordinates.lng = resJSON.results[0].geometry.location.lng;
             this.props.newLocation(coordinates);
+            this.getEVCData(coordinates.lat, coordinates.lng);
         })
     }
 
@@ -30,10 +45,22 @@ export class Footer extends Component {
         return /^\d{5}(-\d{4})?$/.test(zipCodeValue) ? true:false;
     }
 
+    getEVCData = (lat ,lng) =>{
+        let url = "https://api.openchargemap.io/v3/poi/?output=json&maxresults=10&latitude=" + lat + "&longitutde=" + lng + "&distance=50&distanceunit=Miles&countrycode=US";
+        fetch(url)
+        .then(res => res.json())
+        .then(resJSON =>{
+            console.log(resJSON);
+        })
+
+    }
+
     onSubmit = (e) =>{
         e.preventDefault();
         if(this.checkZipCode(this.state.zipCode)){
             this.getZipCodeData(this.state.zipCode);
+            let zoom = this.getZoom(this.state.range);
+            this.props.setZoom(zoom);
         }
         else{
             console.error("Invalid US Zip Code");
@@ -41,7 +68,9 @@ export class Footer extends Component {
         }
         this.setState({
             zipCode: "",
-            range: ""
+            range: "",
+            lat: "",
+            lng: ""
         })
     }
 
@@ -65,7 +94,12 @@ export class Footer extends Component {
                     <p>Zip Code:</p>
                     <input type="text" value={this.state.zipCode} onChange={this.onChange}></input>
                     <p>Range:</p>
-                    <input type="text" id="range-input" value={this.state.range} onChange={this.onChange}></input>
+                    <select id="range-input" value={this.state.range} onChange={this.onChange}>
+                        <option value="twentyFiveMile">25 Miles</option>
+                        <option value="fitfyMile">50 Miles</option>
+                        <option value="seventyFiveMile">75 Miles</option>
+                        <option value="oneHundredMile">100 Miles</option>
+                    </select>
                     <input type="submit"></input>
                 </form>
             </footer>

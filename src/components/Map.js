@@ -17,7 +17,12 @@ export class Map extends Component {
     newLocation = (coordinates) =>{
         this.setState({
             center: coordinates,
-            zoom: 8
+        })
+    }
+
+    setZoom = (range) =>{
+        this.setState({
+            zoom: range
         })
     }
 
@@ -30,7 +35,7 @@ export class Map extends Component {
                     zoom={this.state.zoom}
                 >
                 </GoogleMapReact>
-                <Footer apiKey={this.props.apiKey} newLocation={this.newLocation}/>
+                <Footer apiKey={this.props.apiKey} newLocation={this.newLocation} setZoom={this.setZoom}/>
             </div>
         )
     }
