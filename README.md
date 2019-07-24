@@ -1,41 +1,41 @@
 <h1>App Purpose:</h1>
 <p>The purpose of this app is to allow users to</p>
-<li>
-    <ul>Search for Tesla Charging stations in the United States</ul>
-    <ul>Find Tesla Charging stations within a certain range of a specific location</ul>
-</li>
+<ul>
+    <li>Search for Tesla Charging stations in the United States</li>
+    <li>Find Tesla Charging stations within a certain range of a specific location</li>
+</ul>
 
 <h1>Project Goal:</h1>
 <p>The goal of this project is to familiarize myself with and master</p>
-<li>
-    <ul>Making requests to more than one external API</ul>
-    <ul>Transforming data that combines two external API</ul>
-    <ul>Dynamically adding data to a page</ul>
-    <ul>Users changing API end points for specific needs</ul>
-</li>
+<ul>
+    <li>Making requests to more than one external API</li>
+    <li>Transforming data that combines two external API</li>
+    <li>Dynamically adding data to a page</li>
+    <li>Users changing API end points for specific needs</li>
+</ul>
 
 <h1>Framework: React.js</h1>
 
 <h1>What I Learned: </h1>
-<li>
-    <ul>How to create a multi-page in react</ul>
-    <ul>How to use multiple style sheets in react</ul>
-    <ul>How to use media queries for responsive design</ul>
-    <ul>How to connect to Google Maps using the ‘google-maps-react’ library</ul>
-    <ul>How to combine data from multiple API calls</ul>
-</li>
+<ul>
+    <li>How to create a multi-page in react</li>
+    <li>How to use multiple style sheets in react</li>
+    <li>How to use media queries for responsive design</li>
+    <li>How to connect to Google Maps using the ‘google-maps-react’ library</li>
+    <li>How to combine data from multiple API calls</li>
+</ul>
 
 <h1>Design:</h1>
     <p>Font: https://www.dafont.com/tesla.font</p>
     <p>Color Palette:</p>
-    <li>
-        <ul>Tesla Light Grey: #cccccc</ul>
-        <ul>Tesla Medium Grey: #999999</ul>
-        <ul>Tesla Dark Grey: #666666</ul>
-        <ul>Tesla Very Dark Grey: #333333</ul>
-        <ul>Tesla Black: #000000</ul>
-        <ul>Tesla Red: #cc0000</ul>
-    </li>
+    <ul>
+        <li>Tesla Light Grey: #cccccc</li>
+        <li>Tesla Medium Grey: #999999</li>
+        <li>Tesla Dark Grey: #666666</li>
+        <li>Tesla Very Dark Grey: #333333</li>
+        <li>Tesla Black: #000000</li>
+        <li>Tesla Red: #cc0000</li>
+    </ul>
 
 <h1>Unfinished:</h1>
 <p>I was unable to finish this project because I could not find a free API that contained charging station data that I could use to place on google maps</p>
